@@ -10,6 +10,7 @@
 
 ### Before running this project in local, you should:
 #### - establish a MySQL Database at Port 3306
+#### - install node.js
 #### - create your own environment variable (SECRETs)
 #### - All environment variable: 
 `DBPASSWORD, DBUSER, SESSIONSECRET, JWTTOKEN, SALT, SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD`
