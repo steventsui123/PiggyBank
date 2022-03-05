@@ -1,0 +1,177 @@
+@media screen and (max-width: 1600px) {
+    .homeLeftGridBody{
+        padding: 0rem 10rem 0rem 2.5rem;
+    }
+    .homeRightGridBody{
+        padding: 0rem 2.5rem 0rem 10rem;
+    }
+}
+
+@media screen and (max-width:1435px) {
+    .pig img {
+        width: 550px;
+        margin-top: 6rem;
+    }
+}
+
+@media screen and (max-width:1337px) {
+    .homeLeftGrid img, .homeRightGrid img{
+        max-width: 640px;
+        max-height: 395px;
+    }
+}
+
+
+@media screen and (max-width:1240px) {
+    .homeContainer1{
+        margin: 10rem 1rem 0rem 1rem;
+        gap: 2rem 2rem;
+    }
+    .homeLeftGridBody{
+        padding: 0rem 6rem 0rem 2.5rem;
+    }
+    .homeRightGridBody{
+        padding: 0rem 2.5rem 0rem 6rem;
+    }
+}
+
+@media screen and (max-width:1140px) {
+    .homeContainer1{
+        gap: 1.5rem 1.5rem;
+    }
+    .homeLeftGrid img, .homeRightGrid img{
+        max-width: 580px;
+        max-height: 358px;
+    }
+    .homeLeftGridBody{
+        padding: 0rem 5rem 0rem 2.5rem;
+    }
+    .homeRightGridBody{
+        padding: 0rem 2.5rem 0rem 5rem;
+    }
+
+}
+
+@media screen and (max-width:1115px) {
+    .pig img {
+        width: 420px;
+        margin-top: 8rem;
+    }
+
+}
+
+@media screen and (max-width:1020px){
+    .homeContainer1{
+        margin: 10rem 1.5rem 0rem 1.5rem;
+        grid-template-columns: 2fr 2fr;
+        gap: 2rem 2rem;
+    }
+    .homeLeftGrid img, .homeRightGrid img{
+        max-width: 500px;
+        max-height: 308px;
+    }
+}
+
+@media screen and (max-width:890px) {
+    .homeLeftGrid img, .homeRightGrid img{
+        max-width: 400px;
+        max-height: 246px;
+    }
+}
+
+
+@media screen and (max-width:862px) {
+    .pig img {
+        width: 385px;
+    }
+    .homeContainer1{
+        margin-top: 8rem;
+    }
+}
+
+
+@media screen and (max-width:795px) {
+    .pig img {
+        width: 660px;
+        margin-top: 3.5rem;
+    }
+    .homeContainer1{
+        margin: 8rem 4rem 0rem 4rem;
+        grid-template-columns: auto;
+    }
+    .homeDisplayBlock{
+        display: flex;
+        flex-direction: column;
+    }
+    .homeLeftGrid img, .homeRightGrid img{
+        max-width: 660px;
+        max-height: 407px;
+    }
+    .homeRightGrid img{
+        margin-bottom: 2rem;
+    }
+    .homeLeftGrid, .homeRightGrid, .homeLeftGridHeader, .homeLeftGridBody, .homeRightGridHeader, .homeRightGridBody{
+        float: none;
+        text-align: center;
+        justify-content: center;
+        display: block;
+        margin: 0 auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+
+@media screen and (max-width:660px) {
+    .pig img {
+        width: 530px;
+        margin-top: 3.5rem;
+    }
+    .homeContainer1{
+        margin: 8rem 3rem 0rem 3rem;
+    }
+}
+
+@media screen and (max-width:625px) {
+    .homeLeftGrid img, .homeRightGrid img{
+        max-width: 530px;
+        max-height: 327px;
+    }
+    .homeLeftGridHeader, .homeRightGridHeader{
+        padding-bottom: 0rem;
+    }
+}
+
+@media screen and (max-width:530px) {
+    .pig img {
+        width: 430px;
+        margin-top: 3.5rem;
+    }
+    .homeContainer1{
+        margin: 8rem 2rem 0rem 2rem;
+    }
+}
+
+@media screen and (max-width:490px) {
+    .homeLeftGrid img, .homeRightGrid img{
+        max-width: 430px;
+        max-height: 265px;
+    }
+}
+
+@media screen and (max-width:430px) {
+    .pig img {
+        width: 339px;
+        margin-top: 3.5rem;
+    }
+    .homeContainer1{
+        margin: 8rem 1.5rem 0rem 1.5rem;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .homeLeftGrid img, .homeRightGrid img{
+        max-width: 340px;
+        max-height: 209px;
+    }
+}

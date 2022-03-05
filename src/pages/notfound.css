@@ -1,0 +1,46 @@
+.homebutton{
+    background-color: black;
+    text-decoration: none;
+    border: 3px solid rgb(255, 223, 79);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 28px;
+    padding: 1px 10px;
+}
+
+.homebutton:hover{
+    font-size: 30px;
+
+}
+
+.supportbutton{
+    background-color: black;
+    text-decoration: none;
+    border: 3px solid rgb(255, 223, 79);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 28px;
+    padding: 1px 10px;
+}
+
+
+h1{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(255, 223, 79);
+    margin-top: 2rem;
+}
+
+a{
+    color: rgb(255, 223, 79);
+}
+
+.gethelp{
+    margin-left: 6rem;
+    margin-right: 6rem;
+    padding-top: 0rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgb(255, 223, 79);
+}

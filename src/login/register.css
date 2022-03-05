@@ -1,0 +1,95 @@
+.register{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.regContainer{
+    text-align: center;
+    font-size: 28px;
+    color:rgb(255, 223, 79);
+    padding: 2rem 4rem 2rem 3rem;
+    background: linear-gradient(180deg, rgb(0,0,0) 0%, rgba(42, 42, 42) 100%);
+    border-radius: 20px;
+    border: 2px solid rgb(255, 223, 79);
+    border-style: solid none none none;
+}
+
+.firstnameType, .lastnameType{
+    margin-bottom: 1rem;
+}
+
+.password{
+    margin-left: 2rem;
+}
+
+.regbutton{
+    font-size: 20px;
+    padding: 0.4rem 1rem 0.4rem 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    margin-left: 1rem;
+    background-color: black;
+    color:rgb(255, 223, 79);
+    border: 2px solid rgb(255, 223, 79);
+    border-radius: 8px;
+    width: 280px;
+    cursor: pointer;
+}
+
+.regbutton:hover{
+    transform: all 0.2s ease-out;
+    font-size: 22px;
+    transition: 350ms;
+}
+
+.go-login{
+    font-size: 17px;
+    float: left;
+    margin-left: 1rem;
+}
+
+span{
+    cursor: pointer;
+}
+
+.msg{
+    font-size: 15px;
+    color: red;
+}
+
+.gender{
+    font-size: 22px;
+    text-align: left;
+    padding-left: 3rem;
+}
+
+.verification{
+    font-size: 22px;
+    color:rgb(255, 223, 79);
+}
+
+@media screen and (max-width:840px) {
+    .regbutton, .go-login, .loginbutton{
+        width: 210px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:632px) {
+    .regbutton, .go-login, .loginbutton{
+        width: 160px;
+        font-size: 14px;
+    }
+    h5{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:504px) {
+    .regbutton, .go-login, .loginbutton{
+        width: 130px;
+        font-size: 13px;
+    }
+}

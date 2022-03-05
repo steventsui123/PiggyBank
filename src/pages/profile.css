@@ -1,0 +1,309 @@
+.Profile{
+    background-color: black;
+    border-radius: 1rem;
+    margin: 2rem 10rem;
+    padding: 2rem 5rem;
+}
+.AccountContainer1{
+    display: flex;
+    flex-direction: column;
+    color: rgb(255, 223, 79);
+}
+
+.AccountContainerRow1{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Hind', sans-serif;
+    font-size: calc(16px + 0.8vw);
+}
+
+.profile_name, .profile_piggybankid, .profile_savings{
+    color:rgb(220, 220, 228);
+    font-family: 'Hind', sans-serif;
+    border-top: 2px solid rgb(255, 223, 79);
+    border-radius: 10px;
+}
+
+.ProfileTitle1, .ProfileTitle2, .ProfileTitle3{
+    text-align: center;
+}
+
+.AccountContainerRow2{
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.information_button, .balance_button, .payee_button, .security_button, .dangerzone_button{
+    cursor: pointer;
+    background-color: black;
+    color: rgb(255, 223, 79);
+    border: 2px solid rgb(255,223,79);
+    border-bottom-color: black;
+    padding: 0 0.5vw;
+    border-radius: 5px 5px 0px 0px;
+    font-size: calc(13.5px + 0.65vw);
+}
+
+.AccountContainerRow3{
+    padding: 1rem 0rem 2rem 0rem;
+    font-size: calc(14.5px + 0.85vw);
+    font-family: 'PT Sans', sans-serif;
+    border-bottom: 2px solid;
+    margin-bottom: 0.5rem;
+}
+
+.profile_userdata{
+    color: rgb(220, 220, 228);
+}
+
+.profile_information{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.profile_payee_information{
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 0.8fr;
+}
+
+.profile_payee_edit{
+    display: flex;
+    justify-content: center;
+    color: rgb(80, 223, 52);
+}
+
+.profile_payee_editbutton{
+    justify-content: center;
+    color: rgb(190, 190, 190);
+    font-size: calc(14px + 0.7vw);
+    display: flex;
+    color: rgb(243, 30, 30);
+}
+
+.profile_payee_edit i, .profile_payee_editbutton i {
+    font-size: calc(15px + 1vw);
+}
+
+.profile_credit i{
+    font-size: calc(12px + 0.4vw);
+    cursor: pointer;
+}
+
+.profile_credit_info{
+    color: rgb(190, 190, 190);
+    font-size: calc(9.5px + 0.38vw);
+}
+
+.profile_no2FA{
+    color: rgb(241, 45, 45);
+}
+
+.profile_2FA_txt{
+    color: rgb(190, 190, 190);
+    font-size: calc(10px + 0.4vw);
+
+}
+
+.profile_2FApassword{
+    width: 37.5vw;
+    margin: 0.5rem 0;
+}
+
+.profile_security{
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.profile_changepassword{
+    margin: 0.5rem 0rem;
+}
+.profile_resetpassword{
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 0.75rem;
+    margin-right: 30vw;
+}
+.profile_oldpassword::placeholder, .profile_newpassword::placeholder, .profile_confirmnewpassword::placeholder, .profile_2FApassword::placeholder{
+    color: rgb(150, 150, 150);
+    font-size: calc(12px + 0.3vw);
+}
+
+.profile_oldpassword, .profile_newpassword, .profile_confirmnewpassword, .profile_resetpassword_button, .profile_2FApassword{
+    color: rgb(200, 200, 200);
+    font-size: calc(12px + 0.3vw);
+    background-color: rgb(15, 15, 15);
+    height: calc(20px + 1.35vh);
+    border-radius: 5px;
+    border: 1px solid rgb(80, 80, 80);
+    padding: 0 0.5rem;
+}
+
+.profile_resetpassword_button{
+    color: rgb(255, 255, 255);
+    background-color: rgb(49, 140, 30);
+    border: none;
+}
+
+.profile_warning{
+    font-size: calc(10px + 0.4vw);
+    color: rgb(200, 35, 35);
+    margin-bottom: 0.5rem;
+    margin-right: 12vw;
+}
+
+.profile_terminate_form{
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 0.75rem;
+    margin-right: 40vw;
+}
+
+.profile_terminate_button{
+    color: rgb(240, 40, 40);
+    font-size: calc(12px + 0.3vw);
+    background-color: rgb(15, 15, 15);
+    height: calc(20px + 2vh);
+    border-radius: 5px;
+    border: 1px solid rgb(80, 80, 80);
+    padding: 0 0.5rem;
+    margin-top: 1.5rem;
+}
+
+
+.account_operation_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    column-gap: 5rem;
+    margin: 0 10rem;
+}
+
+.account_operation_title{
+    font-size: calc(13.5px + 1vw);
+    font-family: 'PT Sans', sans-serif;
+    padding-bottom: 1rem;
+}
+
+.account_operation_Img{
+    font-size: calc(22px + 1vw);
+    padding-bottom: 1rem;
+}
+
+.account_operation_transaction, .account_operation_withdrawl, .account_operation_deposit, .account_operation_logout{
+    text-align: center;
+    font-size: calc(20px + 0.8vw);
+    padding: 2vw 2.5rem;
+    cursor: pointer;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.profile_verify_terminate{
+    font-size: calc(10px + 0.4vw);
+    color: rgb(190, 190, 190);
+}
+
+@media screen and (max-width: 1450px) {
+    .account_operation_container{
+        column-gap: 5rem;
+    }
+
+    .Profile{
+        margin: 2rem 6rem;
+    }
+}
+
+@media screen and (max-width: 1275px) {
+    .account_operation_container{
+        column-gap: 3rem;
+    }
+    .Profile{
+        margin: 2rem 2rem;
+        padding: 2rem 3.5rem;
+    }
+    .account_operation_transaction, .account_operation_withdrawl, .account_operation_deposit, .account_operation_logout{
+        padding: 2vw 3rem;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .Profile{
+        padding: 2rem 2.5rem;
+    }
+    .profile_information{
+        grid-template-columns: auto;
+    }
+    .AccountContainerRow2{
+        margin-top: 1.5rem;
+        padding-top: 0.5rem;
+        flex-direction: column;
+        border-right: 2px solid;
+    }
+    .AccountContainerRow3{
+        margin-left: 1rem;
+        border-bottom: none;
+    }
+    .profile_Row2_Row3{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        margin-bottom: 0.5rem;
+    }
+    .information_button, .balance_button, .payee_button, .security_button, .dangerzone_button{
+        border: none;
+        text-align: left;
+    }
+    .account_operation_title{
+        border-bottom: 2px solid;
+    }
+    .account_operation_container{
+        column-gap: 5rem;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .Profile{
+        margin: 2rem 1.5rem;
+        padding: 2rem 2rem;
+    }
+    .profile_Row2_Row3{
+        grid-template-columns: 1fr 3.5fr;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .Profile{
+        margin: 2rem 1rem;
+        padding: 2rem 1rem;
+    }
+    .profile_payee_edittxt{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .account_operation_container{
+        grid-template-columns: auto;
+        margin: 0;
+    }
+    .profile_payee_information{
+        grid-template-columns: 1.5fr 2fr 0.3fr;
+    }
+    .AccountContainerRow1{
+        display: flex;
+        flex-direction: column;
+    }
+    .profile_Row2_Row3{
+        grid-template-columns: auto;
+    }
+    .AccountContainerRow2{
+        border-right: none;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid;
+    }
+    .AccountContainerRow3{
+        margin-left: 0rem;
+        margin-bottom: 0rem;
+    }
+
+}

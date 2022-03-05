@@ -1,0 +1,213 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+    background-color: rgb(25, 25, 25);
+}
+
+
+.homeheader{
+    color: rgb(255, 216, 40);
+}
+
+.pig img{
+    max-width: 700px;
+    max-height: 569px;
+
+    border-radius: 25% 0px 0px 25%;
+    border:rgb(0, 0, 0) solid 2px;
+    margin-top: 3.6rem;
+    float: right;
+}
+
+.headertitle{
+    margin-top: 3.75rem;
+    text-align: center;
+    font-size: calc(20px + 1.5vw);
+    border-left: 2px solid rgb(255, 216, 40);
+    background-color: rgb(29, 29, 29);
+    padding: 1rem 0rem;
+}
+
+.headertxt{
+    font-size: calc(10px + 1.2vw);
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 35em;
+    color: rgb(255, 223, 79);
+    font-family: 'Hind', sans-serif;
+}
+
+.headertxt1{
+    animation: fadeIn ease-in 0.2s;
+}
+.headertxt2{
+    animation: fadeIn ease-in 0.4s;
+}
+.headertxt3{
+    animation: fadeIn ease-in 0.6s;
+}
+.headertxt4{
+    animation: fadeIn ease-in 0.8s;
+}
+.headertxt5{
+    animation: fadeIn ease-in 1s;
+}
+.startbutton, .homeWelcome{
+    animation: fadeIn ease-in 1.5s;
+}
+
+
+.headertxt i{
+    margin: 1.2rem
+}
+
+.startbutton{
+    background-color: black;
+    text-decoration: none;
+    border: 2px solid rgb(255, 223, 79);
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: calc(12px + 1vw);
+    padding: 1px 20px;
+    color: rgb(255, 223, 79);
+}
+
+.homeWelcome{
+    text-decoration: none;
+    font-size: calc(12px + 1vw);
+    padding: 1px 20px;
+    color: rgb(255, 223, 79);
+    border-bottom: 2px solid rgb(255, 223, 79);
+}
+
+.startbutton:hover{
+    background-color: rgb(255, 223, 79);
+    color: rgb(0, 0, 0);
+    border: 3px solid rgb(0, 0, 0);
+    outline: 0.1px solid rgb(255, 223, 79);
+}
+
+.homeContainer{
+    margin: 8rem 0rem 8rem 0rem;
+}
+
+.homeDisplayBlock{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+}
+
+.homeLeftGrid, .homeRightGrid, .homeLeftGridTxt, .homeRightGridTxt{
+    animation: fadeIn ease-in 2s;
+}
+
+.homeLeftGrid img{
+    max-width: 700px;
+    max-height: 430px;
+    float: right;
+}
+
+.homeRightGrid img{
+    float: left;
+    max-width: 700px;
+    max-height: 430px;
+}
+
+.homeLeftGridHeader{
+    font-size: calc(10.5px + 1.6vw);
+    padding: 1.5rem 0rem 1rem 2.5rem;
+    color: rgb(255, 216, 40);
+}
+
+.homeLeftGridBody{
+    font-size: calc(8px + 0.78vw);
+    font-family: 'Heebo', sans-serif;
+    color:rgb(220, 220, 228);
+    padding: 0rem 20rem 0rem 2.5rem;
+}
+
+
+.homeRightGridHeader{
+    font-size: calc(10.5px + 1.6vw);
+    float: right;
+    padding: 1.5rem 2.5rem 1rem 0rem;
+    color: rgb(255, 216, 40);
+}
+
+.homeRightGridBody{
+    font-size: calc(8px + 0.78vw);
+    font-family: 'Heebo', sans-serif;
+    color:rgb(220, 220, 228);
+    padding: 0rem 2.5rem 0rem 20rem;
+    text-align: right;
+    float: right;
+}
+
+
+
+
+.homeContainer1{
+    display: grid;
+    grid-template-columns: 9fr 9fr 9fr;
+    gap: 3rem 3rem;
+    margin: 12rem 3rem 0rem 3rem;
+}
+
+.homeDisplayBlock1{
+    background: linear-gradient(360deg, rgb(29, 29, 29) 0%, rgb(35, 35, 35) 100%);
+    border-bottom: 2px solid rgb(255, 223, 79);
+    margin: 0rem 0rem;
+}
+
+.homeDisplayBlock1:hover{
+    background: linear-gradient(360deg, rgb(29, 29, 29) 0%, rgb(50, 50, 50) 100%);
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    box-shadow: 0px 0px 8px 16px rgb(20, 20, 20);
+}
+
+.homeDisplayImg{
+    color: rgb(255, 223, 79);
+    text-align: center;
+    font-size: calc(22px + 2vw);
+    padding-top: 2rem;
+}
+
+.homeDisplayHeader{
+    font-size: calc(13.5px + 1.2vw);
+    text-align: center;
+    margin-bottom: 10px;
+    padding-top: 2rem;
+    color: rgb(255, 216, 40);
+}
+
+.homeDisplayTxt{
+    font-family: 'Hind', sans-serif;
+    font-size: calc(10px + 0.75vw);
+    color: rgb(255, 223, 79);
+    text-align: center;
+}
+
+.homeDisplayQuote{
+    font-style: italic;
+    font-size: calc(8px + 0.7vw);
+    font-family: 'Heebo', sans-serif;
+    color:rgb(220, 220, 228);
+    padding-bottom: 2rem;
+}
+
+.homeDisplayLearnMore{
+    padding-bottom: 2rem;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+

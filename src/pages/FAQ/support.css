@@ -1,0 +1,142 @@
+.supportheader{
+    text-align: center;
+    color: rgb(255, 223, 79);
+}
+
+.supporttitle{
+    margin-top:4rem;
+    margin-bottom:2.5rem;
+    font-size: calc(19px + 1.4vw);
+    font-family: 'Hind', sans-serif;
+}
+
+.supporttitle2{
+    margin-top:2rem;
+    margin-bottom:2.5rem;
+    font-size: calc(11px + 0.75vw);
+    padding-bottom: 0.3rem;
+    font-family: 'Hind', sans-serif;
+}
+
+.email{
+    cursor: pointer;
+    text-decoration-line: underline;
+    color:rgb(0, 102, 255);
+}
+
+.email i{
+    color:rgb(255, 223, 79);
+}
+
+.supportbar{
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    padding-top: 1rem;
+    margin-left: 12rem;
+    margin-right: 12rem;
+    background-color:rgb(15, 15, 15);
+    border-bottom: 2px groove rgb(255, 223, 79);
+    border-radius: 20px;
+}
+
+.supportbar::-webkit-scrollbar{
+    background-color:rgb(25, 25, 25);
+}
+
+.supportbar::-webkit-scrollbar-thumb{
+    background-color:rgb(255, 223, 79);
+    border: 5px solid rgb(25, 25, 25);
+    border-radius: 25px;
+}
+
+.supportbar a{
+    text-decoration: none;
+    color: rgb(255, 223, 79);
+    min-width: 25vh;
+    font-size: calc(11px + 0.9vw);
+    margin-right: 1rem;
+    margin-left: 1rem;
+    padding: 0.3rem;
+    background-color: rgb(0,0,0);
+    border-radius: 20px;
+    font-family: 'Hind', sans-serif;
+}
+
+@media screen and (max-width:1355px) {
+    .supportbar a{
+        font-size: calc(10px + 0.9vw);
+    }
+}
+    
+.general-btn:hover, .account-btn:hover, .transfer-btn:hover, .loan-btn:hover, .insurance-btn:hover, .development-btn:hover, .estatement-btn:hover, .security-btn:hover{
+    background-color: rgb(255, 223, 79);
+    color: rgb(0, 0, 0);
+    transition: all 0.3s ease-out;
+}
+
+.questionsBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    cursor: pointer;
+    margin-left: 12rem;
+    margin-right: 12rem;
+    margin-top: 1.5rem;
+    padding:1rem 1rem 1rem 1.25rem;
+    border: 2px solid rgb(255, 223, 79);
+}
+
+.questions{
+    color:rgb(255, 223, 79);
+    font-size: calc(11.5px + 0.82vw);
+    font-family: 'Hind', sans-serif;
+}
+
+.answersBar{
+    align-items: center;
+    background-color: black;
+    padding:1.25rem;
+    border: 2px groove rgb(255, 216, 86);
+    border-top: 0px;
+    border-radius: 0px 0px 0px 30px;
+    margin-left: 12rem;
+    margin-right: 12rem;
+}
+
+.answers{
+    color:rgb(220, 220, 228);
+    font-size: calc(10px + 0.7vw);
+    font-family: 'Heebo', sans-serif;
+}
+
+.arrow{
+    color:rgb(255, 223, 79);
+    font-size: 25px;
+}
+
+@media screen and (max-width:1350px) {
+    .supportbar, .questionsBar, .answersBar{
+        margin-left: 8rem;
+        margin-right: 8rem;
+    }
+    .supportbar a{
+        min-width: 19vh;
+        margin-right:0.8rem;
+        margin-left:0.8rem;
+    }
+}
+
+@media screen and (max-width:960px) {
+    .supportbar, .questionsBar, .answersBar{
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+
+    .supportbar a{
+        min-width: 17vh;
+        margin-right:0.4rem;
+        margin-left:0.4rem;
+    }
+}
