@@ -26,7 +26,7 @@ npm start
 ### BackEnd (NodeJs)
 ```
 node src/api/AccountApi
-node src/api/EmailApi`
+node src/api/EmailApi
 node src/api/ProfileApi
 ```
 
