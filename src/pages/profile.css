@@ -34,7 +34,7 @@
     gap: 1rem;
 }
 
-.information_button, .balance_button, .payee_button, .security_button, .dangerzone_button{
+.information_button, .billing_button, .balance_button, .payee_button, .security_button, .dangerzone_button{
     cursor: pointer;
     background-color: black;
     color: rgb(255, 223, 79);
@@ -62,7 +62,23 @@
     grid-template-columns: auto auto;
 }
 
-.profile_payee_information{
+.profile_billing_Row{
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.3fr;
+    padding-bottom: 1px;
+    border-bottom: 1.5px solid;
+}
+
+.profile_billing_loan{
+    margin-top: 2rem;
+}
+
+.profile_billing_action, .profile_billing_status{
+    display: flex;
+    justify-content: center;
+}
+
+.profile_payee_information, .profile_payee_add{
     display: grid;
     grid-template-columns: 1.5fr 2fr 0.8fr;
 }
@@ -71,18 +87,53 @@
     display: flex;
     justify-content: center;
     color: rgb(80, 223, 52);
+    cursor: pointer;
 }
 
-.profile_payee_editbutton{
+.profile_payee_editbutton, .payee_add_cancel, .payee_add_confirm{
     justify-content: center;
     color: rgb(190, 190, 190);
     font-size: calc(14px + 0.7vw);
     display: flex;
     color: rgb(243, 30, 30);
+    cursor: pointer;
+}
+
+.payee_add_confirm{
+    color: rgb(80, 223, 52);
 }
 
 .profile_payee_edit i, .profile_payee_editbutton i {
     font-size: calc(15px + 1vw);
+}
+
+.payee_id_add input,.payee_name_add input{
+    color: rgb(200, 200, 200);
+    font-size: calc(13.5px + 0.55vw);
+    background-color: rgb(15, 15, 15);
+    border-radius: 5px;
+    border: 2px solid rgb(255,223,79);
+    padding: 0.2rem 0.2rem;
+    width: 25vw;
+}
+
+.payee_add_button{
+    display: flex;
+    justify-content: center;
+    column-gap: 0.5rem;
+    font-size: calc(14px + 0.7vw);
+    color: rgb(0,0,0);
+    cursor: pointer;
+}
+
+.payee_confirm_button, .payee_cancel_button{
+    background-color: rgb(80, 223, 52);
+    padding: 0 0.3rem;
+    border-radius: 5px;
+}
+
+.payee_cancel_button{
+    background-color: rgb(241, 45, 45);
 }
 
 .profile_credit i{
@@ -99,15 +150,23 @@
     color: rgb(241, 45, 45);
 }
 
+.profile_2FA_enabled{
+    color: rgb(80, 223, 52);
+}
+
 .profile_2FA_txt{
     color: rgb(190, 190, 190);
     font-size: calc(10px + 0.4vw);
-
 }
 
 .profile_2FApassword{
     width: 37.5vw;
     margin: 0.5rem 0;
+}
+
+.profile_checkPasswordFail, .payee_add_msg{
+    color: rgb(241, 45, 45);
+    font-size: calc(10px + 0.6vw);
 }
 
 .profile_security{
@@ -118,18 +177,20 @@
 .profile_changepassword{
     margin: 0.5rem 0rem;
 }
+
 .profile_resetpassword{
     display: grid;
     grid-template-columns: auto;
     row-gap: 0.75rem;
     margin-right: 30vw;
 }
+
 .profile_oldpassword::placeholder, .profile_newpassword::placeholder, .profile_confirmnewpassword::placeholder, .profile_2FApassword::placeholder{
     color: rgb(150, 150, 150);
     font-size: calc(12px + 0.3vw);
 }
 
-.profile_oldpassword, .profile_newpassword, .profile_confirmnewpassword, .profile_resetpassword_button, .profile_2FApassword{
+.profile_oldpassword, .profile_newpassword, .profile_confirmnewpassword, .profile_resetpassword_button, .profile_2FApassword, .profile_disable2FA_button{
     color: rgb(200, 200, 200);
     font-size: calc(12px + 0.3vw);
     background-color: rgb(15, 15, 15);
@@ -143,6 +204,13 @@
     color: rgb(255, 255, 255);
     background-color: rgb(49, 140, 30);
     border: none;
+    cursor: pointer;
+}
+
+.profile_disable2FA_button{
+    color: rgb(240, 40, 40);
+    background-color: rgb(15, 15, 15);
+    cursor: pointer;
 }
 
 .profile_warning{
@@ -198,9 +266,13 @@
     font-family: 'PT Sans', sans-serif;
 }
 
-.profile_verify_terminate{
+.profile_verify_terminate, .profile_verify_terminate1{
     font-size: calc(10px + 0.4vw);
     color: rgb(190, 190, 190);
+}
+
+.profile_verify_terminate1{
+    margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 1450px) {
@@ -248,7 +320,19 @@
         grid-template-columns: 1fr 3fr;
         margin-bottom: 0.5rem;
     }
-    .information_button, .balance_button, .payee_button, .security_button, .dangerzone_button{
+    .profile_payee_add{
+        grid-template-columns: 1.5fr 2fr 0.3fr;
+    }
+    .profile_payee_add{
+        grid-template-columns: auto;
+        justify-content: center;
+        row-gap: 0.5rem;
+    }
+    .payee_id_add input, .payee_name_add input{
+        width: 50vw;
+    }
+
+    .information_button, .billing_button, .balance_button, .payee_button, .security_button, .dangerzone_button{
         border: none;
         text-align: left;
     }
@@ -259,6 +343,7 @@
         column-gap: 5rem;
         grid-template-columns: 1fr 1fr;
     }
+    
 }
 
 @media screen and (max-width: 750px) {
@@ -305,5 +390,7 @@
         margin-left: 0rem;
         margin-bottom: 0rem;
     }
-
+    .payee_id_add input, .payee_name_add input{
+        width: 75vw;
+    }
 }

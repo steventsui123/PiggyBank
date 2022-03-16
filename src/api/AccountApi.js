@@ -40,13 +40,13 @@ app.use(session({
     resave: true,
     saveUninitialized: false,
     cookie: {
-        expires: 60 * 60 * 1000
+        expires: 120 * 60 * 1000
     }
 }));
 
 
 //mysql connection
-const db = mysql.createConnection({
+const db_user = mysql.createConnection({
     user: dbuser,
     host: "localhost",
     password: dbpassword,
@@ -66,7 +66,7 @@ app.post('/register', (req, res) => {
         if (err){
             res.send(err)
         }
-        db.query("INSERT INTO user (email, password, firstname, lastname) VALUES (?,?,?,?)", 
+        db_user.query("INSERT INTO user (email, password, firstname, lastname) VALUES (?,?,?,?)", 
             [email, hashedpw, firstname, lastname], (err, result) => {
                 res.send(err);
         })
@@ -77,7 +77,7 @@ app.post('/register', (req, res) => {
 app.post('/registered', (req,res) => {
     const cemail = req.body.cemail
 
-    db.query("SELECT email FROM user WHERE email = ?;",
+    db_user.query("SELECT email FROM user WHERE email = ?;",
     cemail, (err, result) => {
         res.send(result)
     })
@@ -120,7 +120,7 @@ app.post('/login', (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
 
-    db.query("SELECT * FROM user WHERE email = ?;", 
+    db_user.query("SELECT * FROM user WHERE email = ?;", 
             email, (err, result) => {
                 if (err){
                     res.send(err);
@@ -157,7 +157,7 @@ app.get('/logout', function(req, res) {
     const storeCode = req.body.storeCode
     const storeEmail = req.body.storeEmail
 
-    db.query("UPDATE user SET verification = ? WHERE email = ?;", 
+    db_user.query("UPDATE user SET verification = ? WHERE email = ?;", 
     [storeCode, storeEmail], (err, result) => {
         res.send(result);
     })
@@ -167,7 +167,7 @@ app.get('/logout', function(req, res) {
  app.post("/check_code", (req, res) =>{
     const code = req.body.code
 
-    db.query("SELECT * FROM user WHERE verification = ?;", 
+    db_user.query("SELECT * FROM user WHERE verification = ?;", 
     code, (err, result) => {
         if (result.length > 0){
             res.send(true)
@@ -187,7 +187,7 @@ app.get('/logout', function(req, res) {
         if (err){
             res.send(err)
         }else{
-        db.query("UPDATE user SET password = ? WHERE email = ?;", 
+        db_user.query("UPDATE user SET password = ? WHERE email = ?;", 
             [hash, targetEmail], (err, result) => {
                 res.send(result);
             })
@@ -195,6 +195,23 @@ app.get('/logout', function(req, res) {
     })
  })
 
+ //check password
+ app.post("/check_password", (req, res) => {
+    const user_id = req.body.user_id_checkpassword
+    const input_password = req.body.input_password
+
+    db_user.query("SELECT password FROM user WHERE user_id = ?;", 
+    user_id, (err, result) => {
+        bcrypt.compare(input_password, result[0].password, (err,comparedresult) =>{
+            if (comparedresult){
+                res.send("Check Password Passed")
+            }else{
+                res.send("Check Password Failed")
+            }
+        })
+    })
+
+ })
  
 
 

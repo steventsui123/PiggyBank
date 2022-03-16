@@ -20,14 +20,14 @@ const toggle = (index) => {
         <div className="supporttitle">Frequently Asked Questions</div>
         <div className="supporttitle2">Any problem, please contact Rudy Yen at email: <div className="email" onClick={() => window.location = 'mailto:rudyyen.work@gmail.com'}><i className="far fa-envelope"></i>rudyyen.work@gmail.com </div></div>
         <div className="supportbar">
-            <a className='general-btn' href='support=general'> <i className="far fa-question-circle"></i> General</a>
-            <a className='account-btn' href='support=account'> <i className="fas fa-user-circle"></i> Account</a>
-            <a className='transfer-btn' href='support=transaction' style={highlightbtn}> <i className="fas fa-donate"></i> Transaction</a>
-            <a className='loan-btn' href='support=loan'> <i className="fas fa-hand-holding-usd"></i> Loan</a>
-            <a className='insurance-btn' href='support=insurance'> <i className="fas fa-user-shield"></i> Insurance</a>
-            <a className='development-btn' href='support=development'> <i className="fas fa-file-code"></i> Development</a>
-            <a className='security-btn' href='support=security'> <i className="fas fa-lock"></i> Security</a>
-            <a className='estatement-btn' href='support=estatement'> <i className="fas fa-print"></i> E-Statement</a>
+            <a className='general-btn' href='support=general'> <i className="far fa-question-circle"></i><div className="supportchoice"> General</div></a>
+            <a className='account-btn' href='support=account'> <i className="fas fa-user-circle"></i><div className="supportchoice"> Account</div></a>
+            <a className='transfer-btn' href='support=transaction' style={highlightbtn}> <i className="fas fa-donate"></i><div className="supportchoice"> Transaction</div></a>
+            <a className='loan-btn' href='support=loan'> <i className="fas fa-hand-holding-usd"></i><div className="supportchoice"> Loan</div></a>
+            <a className='insurance-btn' href='support=insurance'> <i className="fas fa-user-shield"></i><div className="supportchoice"> Insurance</div></a>
+            <a className='development-btn' href='support=development'> <i className="fas fa-file-code"></i><div className="supportchoice"> Development</div></a>
+            <a className='security-btn' href='support=security'> <i className="fas fa-lock"></i><div className="supportchoice"> Security</div></a>
+            <a className='estatement-btn' href='support=estatement'> <i className="fas fa-print"></i><div className="supportchoice"> E-Statement</div></a>
         </div>
         </div>
         <div className='FAQContainer'>

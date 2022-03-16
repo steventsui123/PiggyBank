@@ -1,3 +1,12 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
+
+User-agent: Googlebot
+Disallow: /3001/
+
+User-agent: Googlebot
+Disallow: /3002/
+
+User-agent: Googlebot
+Disallow: /3003/

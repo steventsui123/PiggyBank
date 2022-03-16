@@ -3,10 +3,16 @@ import Axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import './register.css';
 
+import user from "../material/icons/user.png"
+import corporate from "../material/icons/corporate.png"
+import group from "../material/icons/group.png"
+
 
 const Register = () => {
 
     const navigate = useNavigate()
+
+    const [accountChoice, setAccountChoice] = useState("")
 
     const [emailReg, setEmailReg] = useState('')
     const [passwordReg, setPasswordReg] = useState('')
@@ -42,7 +48,7 @@ const Register = () => {
         })
 
         if (Confirmpassword !== passwordReg){
-            setConfirmPasswordMsg("Password and cofirm password does not match.")}
+            setConfirmPasswordMsg("Password and confirm password does not match.")}
         if(!passwordReg){
             setPasswordMsg("Password is required.")}
         if (!emailReg){
@@ -82,7 +88,44 @@ const Register = () => {
 
     return (
         <div className="register">
+            {accountChoice == "" &&
+            <div className="account_choice_container">
+                <div className="account_choice" onClick={() => setAccountChoice("personal")}>
+                    <div className="account_choice_icon">
+                        <img src={user} width='120' alt=""/>
+                    </div>
+                    <div className="account_choice_title">
+                        Personal Account
+                    </div>
+                </div>
+                <div className="account_choice">
+                    <div className="account_choice_icon">
+                        <img src={group} width='120' alt=""/>
+                    </div>
+                    <div className="account_choice_title">
+                        Joint Account
+                    </div>
+                    <div className="account_choice_txt">
+                        Coming Soon
+                    </div>
+                </div>
+                <div className="account_choice">
+                    <div className="account_choice_icon">
+                        <img src={corporate} width='120' alt=""/>
+                    </div>
+                    <div className="account_choice_title">
+                        Corporate Account
+                    </div>
+                    <div className="account_choice_txt">
+                        Coming Soon
+                    </div>
+                </div>
+            </div>
+            }
+
+            {accountChoice == "personal" &&
             <div className="regContainer">
+                <div className="register_goback"><a className="fas fa-arrow-alt-circle-left" href="/register"></a></div>
                 <div className="logintitle">Registeration</div>
                     <h5>User Information</h5>
                 <div className="regname">
@@ -105,29 +148,33 @@ const Register = () => {
                             setEmailReg(e.target.value);
                         }} className="emailType"/>
                     </div>
-                        <div className="msg">{emailMsg ? emailMsg : ""}</div>
+                    <div className="msg">{emailMsg ? emailMsg : ""}</div>
+
                     <div className="password">
                         <input type={mask ? "password" : "text"} placeholder="Passsword" onChange={(e) => {
                             setPasswordReg(e.target.value);
                         }} className="passwordType"/>
                         <span className={mask ? "far fa-eye" : "far fa-eye-slash"} onClick={PasswordToggle}/>
                     </div>
-                        <div className="msg">{passwordMsg ? passwordMsg : ""}</div>
+                    <div className="msg">{passwordMsg ? passwordMsg : ""}</div>
+
                     <div className="password">
                         <input type={mask2 ? "password" : "text"} placeholder="Confirm Passsword" onChange={(e) => {
                             setConfirmPassword(e.target.value);
                         }} className="repasswordType"/>
                         <span className={mask2 ? "far fa-eye" : "far fa-eye-slash"} onClick={ConfirmPasswordToggle}/>
                     </div>
-                        <div className="msg">{confirmPasswordMsg ? confirmPasswordMsg : ""}</div>
-                    </div>
-                        <div>
-                            <button className="regbutton" onClick={checkReg}> Register </button>
-                        </div>
-                    <div>
-                        <a className="go-login" href="/login">Already have an account?</a>
-                    </div>
+                    <div className="msg">{confirmPasswordMsg ? confirmPasswordMsg : ""}</div>
+
                 </div>
+                <div>
+                    <button className="regbutton" onClick={checkReg}> Register </button>
+                </div>
+                <div>
+                    <a className="go-login" href="/login">Already have an account?</a>
+                </div>
+            </div>
+            }
         </div>
     )
 }

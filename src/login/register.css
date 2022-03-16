@@ -5,7 +5,23 @@
     align-items: center;
 }
 
-.regContainer{
+.account_choice_container{
+    margin-top: 20vh;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 3rem;
+}
+
+.account_choice{
+    cursor: pointer;
+}
+
+.account_choice_txt{
+    font-size: 22px;
+    color:rgb(220, 220, 228);
+}
+
+.account_choice, .regContainer{
     text-align: center;
     font-size: 28px;
     color:rgb(255, 223, 79);
@@ -14,6 +30,11 @@
     border-radius: 20px;
     border: 2px solid rgb(255, 223, 79);
     border-style: solid none none none;
+}
+
+.register_goback a{
+    float: left;
+    text-decoration: none;
 }
 
 .firstnameType, .lastnameType{
@@ -68,6 +89,13 @@ span{
 .verification{
     font-size: 22px;
     color:rgb(255, 223, 79);
+}
+
+@media screen and (max-width:1060px) {
+    .account_choice_container{
+        margin-top: 2vh;
+        grid-template-columns: auto;
+    }
 }
 
 @media screen and (max-width:840px) {
