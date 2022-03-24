@@ -1,6 +1,6 @@
 # PiggyBank
 
-PiggyBank is a fully responsive web application, which operates and provides various bank functions by REST API and Database CRUD Operations.
+PiggyBank is a fully responsive web application, which operates and provides various bank functions by REST API and CRUD Operations.
 
 > Notice: This project is still on development status (17/3/2022)
 
