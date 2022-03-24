@@ -42,6 +42,7 @@ Open [http://localhost:3000](http://localhost:3000) and you will see the page ap
 * Two-Factor Authentication (Email)
 * Payee Registration
 * Password Changing
+* Account Termination
 * Transaction History
 * Credit Scoring
 * Interest / Loan Calculator
