@@ -2,7 +2,7 @@
 
 PiggyBank is a fully responsive web application, which operates and provides various bank functions by REST API and CRUD Operations.
 
-> Notice: This project is still on development status (17/3/2022). The website will be hosted after completion.
+> Notice: This project is still on development status (30/3/2022). The website will be hosted after completion.
 
 __Technologies: ReactJS, CSS, NodeJS, ExpressJS, MySQL, Axios, Bcrypt__
 
