@@ -21,7 +21,7 @@
     color: rgb(255, 223, 79);
     margin-left: 20px;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 22px;
 }
 
 .navbar-logo a{
@@ -47,9 +47,7 @@
 }
 
 .nav-links:hover{
-    background-color: rgb(0,0,0);
-    border-radius: 6px;
-    border: 2px solid rgb(255, 223, 79);
+    border-bottom: 2px solid rgb(255, 223, 79);
 }
 
 .fa-bars {
@@ -64,7 +62,7 @@
     display: none;
 }
 
-@media screen and (max-width:969px) {
+@media screen and (max-width:1014px) {
     .navbar {
         position: sticky;
         position: -webkit-sticky;
@@ -106,7 +104,7 @@
         display: block;
         text-align: center;
         background-color: rgb(15,15,15);
-        font-size: 20px;
+        border: 2px solid rgb(255, 223, 79);
         border-radius: 10px;
         width: 75%;
         margin: auto;
@@ -149,7 +147,6 @@
     }
 
     .nav-links-mobile:hover{
-        font-size: 25px;
         transition: 250ms;
     }
 

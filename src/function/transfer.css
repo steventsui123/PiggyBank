@@ -1,0 +1,117 @@
+.transfer{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.transfer_choice_container{
+    margin-top: 20vh;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 5vw;
+    justify-content: center;
+}
+
+.transfer_choice{
+    min-width: 22.5vw;
+    cursor: pointer;
+}
+
+.transfer_choice_txt{
+    font-size: 22px;
+    color:rgb(220, 220, 228);
+}
+
+.transfer_choice{
+    text-align: center;
+    font-size: 28px;
+    color:rgb(255, 223, 79);
+    padding: 2rem 4rem 2rem 3rem;
+    background: linear-gradient(180deg, rgb(0,0,0) 0%, rgba(42, 42, 42) 100%);
+    border-radius: 20px;
+    border: 2px solid rgb(255, 223, 79);
+    border-style: solid none none none;
+}
+
+.by_payee{
+    color:rgb(255, 223, 79);
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 2rem
+}
+
+.transfer_current_id{
+    color:rgb(220, 220, 228);
+}
+
+.transfer_goback a{
+    text-decoration: none;
+}
+
+.transfer_tickbox input{
+    background-color: rgb(255, 223, 79);
+    border: rgb(220, 220, 228)
+}
+
+.transfer_payee_information, .transfer_payee_choose{
+    display: grid;
+    grid-template-columns: 0.8fr 2fr 2fr;
+    gap: 1rem;
+    text-align: center;
+}
+
+.transfer_payee_choose:hover{
+    background: linear-gradient(180deg, rgb(30,30,30) 0%, rgba(50, 50, 50) 100%);
+    cursor: pointer;
+}
+
+.transfer_payee_choose:visited, .transfer_payee_choose:focus{
+    background: linear-gradient(180deg, rgb(30,30,30) 0%, rgba(50, 50, 50) 100%);
+}
+
+.transfer_container, .transfer_payee_list{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    font-size: 30px;
+    background: rgba(14, 14, 14, 0.7);
+    padding: 2rem 4rem 2rem 3rem;
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgb(0,0,0) 0%, rgba(42, 42, 42) 100%);
+    border-radius: 20px;
+    border: 2px solid rgb(255, 223, 79);
+    border-style: solid none none none;
+}
+
+
+.transfer_amount_input input{
+    width: 15rem;
+    height: 3vh;
+    font-size: 25px;
+    text-align: right;
+    color: rgb(220, 220, 228);
+    background-color: rgb(0,0,0);
+    border: 2px solid rgb(220, 220, 228);
+}
+
+.transfer_confirm{
+    background-color: black;
+    padding: 0.2rem;
+    border: 2px solid;
+    font-size: 25px;
+    margin: 0 6rem 0 6rem;
+    cursor: pointer;
+    border-radius: 20px;
+}
+@media screen and (max-width:1050px) {
+    .by_payee{
+        grid-template-columns: auto;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .transfer_choice_container{
+        grid-template-columns: auto;
+    }
+}

@@ -59,12 +59,6 @@
     cursor: pointer;
 }
 
-.regbutton:hover{
-    transform: all 0.2s ease-out;
-    font-size: 22px;
-    transition: 350ms;
-}
-
 .go-login{
     font-size: 17px;
     float: left;
@@ -103,6 +97,9 @@ span{
         width: 210px;
         font-size: 16px;
     }
+    .regContainer{
+        padding: 2rem 3rem 2rem 2rem;
+    }
 }
 
 @media screen and (max-width:632px) {
@@ -113,11 +110,17 @@ span{
     h5{
         font-size: 16px;
     }
+    .account_choice_container img{
+        width:100px
+    }
 }
 
 @media screen and (max-width:504px) {
-    .regbutton, .go-login, .loginbutton{
+    .regbutton, .loginbutton{
         width: 130px;
         font-size: 13px;
+    }
+    .regContainer{
+        padding: 2rem 2rem 2rem 1rem;
     }
 }

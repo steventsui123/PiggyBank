@@ -1,6 +1,7 @@
 import React, { useState, useContext, useLayoutEffect} from "react";
 import { LoginStatusContext } from "../context/LoginContext";
 import { useNavigate } from "react-router-dom";
+import login from "../material/pictures/login.png"
 import Axios from 'axios';
 import './login.css';
 
@@ -63,6 +64,7 @@ export default function Login(){
         <div className="login">
         <div className="loginContainer">
             <div className="logintitle">Login</div>
+            <img src={login} alt="" width='150px' />
                 <div className="email">
                     <input type="text" placeholder="Email Address" onChange={(e) => {
                         setEmail(e.target.value);

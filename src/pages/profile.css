@@ -4,6 +4,7 @@
     margin: 2rem 10rem;
     padding: 2rem 5rem;
 }
+
 .AccountContainer1{
     display: flex;
     flex-direction: column;
@@ -236,6 +237,7 @@
     border: 1px solid rgb(80, 80, 80);
     padding: 0 0.5rem;
     margin-top: 1.5rem;
+    cursor: pointer;
 }
 
 
@@ -264,6 +266,11 @@
     padding: 2vw 2.5rem;
     cursor: pointer;
     font-family: 'PT Sans', sans-serif;
+}
+
+.account_operation_transaction:hover, .account_operation_withdrawl:hover, .account_operation_deposit:hover, .account_operation_logout:hover{
+    border-bottom: 2px solid rgb(255,223,79);
+    transition: all 0.1s ease-out;
 }
 
 .profile_verify_terminate, .profile_verify_terminate1{

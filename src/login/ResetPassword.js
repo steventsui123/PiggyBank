@@ -1,6 +1,9 @@
 import React, {useState} from "react";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
+import forgotpassword from "../material/pictures/forgot-password.png";
+import resetpassword from "../material/pictures/reset-password.png";
+import postbox from "../material/pictures/postbox.png";
 
 const ResetPassword = () => {
 
@@ -91,6 +94,7 @@ const ResetPassword = () => {
                 {!emailSent ? (
                 <div>
                     <div className="logintitle">Reset Password</div>
+                        <img src={forgotpassword} alt="" width='150px' />
                         <div className="emailBlock">
                             <div>
                                 Forgot Password?<br/>
@@ -108,6 +112,7 @@ const ResetPassword = () => {
                     ) : (
                     <div>
                     <div className="logintitle">{!isCodeValid ? "Verification" : "Reset Password"}</div>
+                        {!isCodeValid ? <img src={postbox} alt="" width='150px' /> : <img src={resetpassword} alt="" width='150px' />}
                         <div className="emailBlock">
                             <div className="verification">
                                 {!isCodeValid ?

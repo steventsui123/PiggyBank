@@ -78,7 +78,7 @@ const Register = () => {
             email: emailReg, 
             password: passwordReg,
             firstname: firstnameReg,
-            lastname: lastnameReg
+            lastname: lastnameReg,
         }).then((response) => {
             if (!response.data){
                 navigate('/login')

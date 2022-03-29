@@ -5,6 +5,7 @@ import './profile.css';
 
 import {LoginStatusContext} from "../context/LoginContext";
 import {LoginIDContext} from "../context/LoginContext";
+import {userPayeeContext} from "../context/UserContext";
 
 const Profile = () => {
     Axios.defaults.withCredentials = true;
@@ -21,25 +22,22 @@ const Profile = () => {
     const [user2FA, setUser2FA] = useState("")
     const [userType, setUserType] = useState("")
 
-
     const [payeeAdd, setPayeeAdd] = useState(false)
-    const [userPayee, setUserPayee] = useState([])
+    const {userPayee, setUserPayee} = useContext(userPayeeContext);
     const [payeeAdd_ID, setPayeeAdd_ID] = useState("")
     const [payeeAdd_Name, setPayeeAdd_Name] = useState("")
     const [payeeAdd_Msg, setPayeeAdd_Msg] = useState("")
 
     const [userCurrentPassword, setUserCurrentPassword] = useState("")
-
     const [userOldPassword, setUserOldPassword] = useState("")
     const [userNewPassword, setUserNewPassword] = useState("")
     const [userConfirmNewPassword, setUserConfirmNewPassword] = useState("")
-
     const [ResetPasswordMsg, setResetPasswordMsg] = useState("")
+    const [checkPasswordFailMsg, setcheckPasswordFailMsg] = useState("")
 
     const [userTerminatePassword, setUserTerminatePassword] = useState("")
-
-    
-    const [checkPasswordFailMsg, setcheckPasswordFailMsg] = useState("")
+    const [userTerminateConfirm, setUserTerminateConfirm] = useState("")
+    const [userTerminateMsg, setUserTerminateMsg] = useState("")
 
 
     const [profile_button, set_profile_button] = useState("information");
@@ -104,16 +102,37 @@ const Profile = () => {
         }
     })
 
+    const switch_payee = () =>{
+        set_profile_button("payee")
+        setPayeeAdd(false)
+        setPayeeAdd_ID("")
+        setPayeeAdd_Name("")
+        setPayeeAdd_Msg("")
+    }
     const switch_payee_add = () => {
         setPayeeAdd(!payeeAdd)
         setPayeeAdd_Msg("")
     }
-    
+    const switch_security = () =>{
+        set_profile_button("security")
+        setUserCurrentPassword("")
+        setUserOldPassword("")
+        setUserNewPassword("")
+        setUserConfirmNewPassword("")
+        setResetPasswordMsg("")
+        setcheckPasswordFailMsg("")
+    }
+    const switch_dangerzone = () =>{
+        set_profile_button("dangerzone")
+        setUserTerminatePassword("")
+        setUserTerminateConfirm("")
+        setUserTerminateMsg("")
+    }
+
     const get_payee = () => {
         Axios.post("http://localhost:3003/get_payee",{
         searchingID: loginID})
         .then((response) => {
-            //console.log(response.data)
             if (response.data){
                 setUserPayee(response.data)
             }
@@ -159,8 +178,8 @@ const Profile = () => {
         var payee_ID = payeeID
         Axios.post("http://localhost:3003/delete_payee", {
             user_id_deletepayee: loginID,
-            payee_id: payee_ID
-        }).then(() => {
+            payee_id: payee_ID})
+        .then(() => {
             get_payee()
         })
     }
@@ -169,31 +188,31 @@ const Profile = () => {
         Axios.post("http://localhost:3001/check_password",{
             user_id_checkpassword: loginID,
             input_password: userCurrentPassword})
-            .then((response_enable2FA) => {
-                if (response_enable2FA.data === "Check Password Passed"){
-                    Axios.post("http://localhost:3003/enable_2FA",{user_id_enable2FA: loginID})
-                    .then(setUser2FA(!user2FA))
-                    setcheckPasswordFailMsg("")
-                }else{
-                    setcheckPasswordFailMsg("Password Incorrect, please try it again")
-                }
-            })
+        .then((response_enable2FA) => {
+            if (response_enable2FA.data === "Check Password Passed"){
+                Axios.post("http://localhost:3003/enable_2FA",{user_id_enable2FA: loginID})
+                .then(setUser2FA(!user2FA))
+                setcheckPasswordFailMsg("")
+            }else{
+                setcheckPasswordFailMsg("Password Incorrect, please try it again")
+            }
+        })
     }
 
     const disable2FA = () =>{
         Axios.post("http://localhost:3001/check_password",{
             user_id_checkpassword: loginID,
             input_password: userCurrentPassword})
-            .then((response_disable2FA) => {
-                if (response_disable2FA.data === "Check Password Passed"){
-                    Axios.post("http://localhost:3003/disable_2FA",{user_id_disable2FA: loginID})
-                    .then(setUser2FA(!user2FA))
-                    setcheckPasswordFailMsg("")
-                }else{
-                    setcheckPasswordFailMsg("Password Incorrect, please try it again")
-                }
-            })
-        }
+        .then((response_disable2FA) => {
+            if (response_disable2FA.data === "Check Password Passed"){
+                Axios.post("http://localhost:3003/disable_2FA",{user_id_disable2FA: loginID})
+                .then(setUser2FA(!user2FA))
+                setcheckPasswordFailMsg("")
+            }else{
+                setcheckPasswordFailMsg("Password Incorrect, please try it again")
+            }
+        })
+    }
 
     const resetpassword = () =>{
         if (userNewPassword != userConfirmNewPassword){
@@ -220,6 +239,25 @@ const Profile = () => {
             })
     }
 
+    const delete_account = () =>{
+        Axios.post("http://localhost:3001/check_password",{
+            user_id_checkpassword: loginID,
+            input_password: userTerminatePassword
+        }).then((response_deleteaccount) => {
+            if (response_deleteaccount.data === "Check Password Passed"){
+                if (userTerminateConfirm != "terminate my account"){
+                    return setUserTerminateMsg('Incorrect verification by input "terminate my account".')
+                }else{
+                    Axios.post("http://localhost:3001/delete_account",{user_id_deleteaccount:loginID})
+                    window.alert("Account Terminated.\nAny problem, please contact: rudyyen.work@gmail.com")
+                    logout()
+                }
+            }else{
+                return setUserTerminateMsg('Incorrect Current Password.')
+            }
+        })
+    }
+
     const logout = () => {
         setLoginStatus(false)
         setLoginID(0)
@@ -235,15 +273,15 @@ const Profile = () => {
             <div className="AccountContainer1">
                 <div className="AccountContainerRow1">
                     <div className="ProfileTitle1">
-                        <div className="far fa-user-circle"> Name</div>
+                        <div className="far fa-user-circle"></div> Name
                         <div className="profile_name">{userFirstName} {userLastName}</div>
                     </div>
                     <div className="ProfileTitle2">
-                        <div className="far fa-id-badge"> PiggyBank ID</div>
+                        <div className="fa-solid fa-tag"></div> PiggyBank ID
                         <div className="profile_piggybankid">{loginID}</div>
                     </div>
                     <div className="ProfileTitle3">
-                        <div className="fas fa-dollar-sign"> Savings</div>
+                        <div className="fas fa-dollar-sign"></div> Savings
                         <div className="profile_savings">HKD {userBalance}</div>
                     </div>
                 </div>
@@ -253,9 +291,9 @@ const Profile = () => {
                         <button className="information_button" onClick={() => set_profile_button("information")}>Information</button>
                         <button className="billing_button" onClick={() => set_profile_button("billing")}>Billing</button>
                         <button className="balance_button" onClick={() => set_profile_button("balance")}>Balance</button>
-                        <button className="payee_button" onClick={() => set_profile_button("payee")}>Payee</button>
-                        <button className="security_button" onClick={() => set_profile_button("security")}>Security</button>
-                        <button className="dangerzone_button" onClick={() => set_profile_button("dangerzone")}>Danger Zone</button>
+                        <button className="payee_button" onClick={switch_payee}>Payee</button>
+                        <button className="security_button" onClick={switch_security}>Security</button>
+                        <button className="dangerzone_button" onClick={switch_dangerzone}>Danger Zone</button>
                     </div>
                     
                     <div className="AccountContainerRow3">
@@ -354,6 +392,7 @@ const Profile = () => {
                                 <input type="password" placeholder="Current Password" onChange={(e) => {
                                 setUserCurrentPassword(e.target.value);
                                 }} className="profile_2FApassword"/>
+                                <div className="profile_checkPasswordFail">{ checkPasswordFailMsg ? checkPasswordFailMsg : ""}</div>
                                 <div><button className="profile_resetpassword_button" onClick={enable2FA}> Enable Two Factor Authenication </button></div>
                             </div>) : 
                             (<div>
@@ -362,9 +401,9 @@ const Profile = () => {
                                 <input type="password" placeholder="Current Password" onChange={(e) => {
                                 setUserCurrentPassword(e.target.value);
                                 }} className="profile_2FApassword"/>
+                                <div className="profile_checkPasswordFail">{ checkPasswordFailMsg ? checkPasswordFailMsg : ""}</div>
                                 <div><button className="profile_disable2FA_button" onClick={disable2FA}> Disable Two Factor Authenication </button></div>
                             </div>)}
-                            <div className="profile_checkPasswordFail">{ checkPasswordFailMsg ? checkPasswordFailMsg : ""}</div>
                             <div className="profile_changepassword">Change Password</div>
                             <div className="profile_resetpassword">
                                 <input type="password" placeholder="Old Password" onChange={(e) => {
@@ -394,10 +433,11 @@ const Profile = () => {
                                     }} className="profile_oldpassword"/>
                                 <div className="profile_verify_terminate">To verify, please type "terminate my account" below</div>
                                 <input type="text" onChange={(e) => {
-                                        setUserTerminatePassword(e.target.value);
+                                        setUserTerminateConfirm(e.target.value);
                                     }} className="profile_oldpassword"/>
                             </div>
-                                <button className="profile_terminate_button"> Terminate your account </button>
+                            <div className="profile_checkPasswordFail">{userTerminateMsg}</div>
+                            <button className="profile_terminate_button" onClick={delete_account}> Terminate your account </button>
                         </div>}
                         
                     </div>
@@ -406,17 +446,17 @@ const Profile = () => {
                 <div className="AccountContainerRow4">
                     <div className="account_operation_title">Account Operation</div>
                     <div className="account_operation_container">
-                        <div className="account_operation_transaction">
+                        <div className="account_operation_transaction" onClick={() => navigate("/transfer")}>
                             <div className="account_operation_Img">
-                                <i className="fas fa-coins"></i>
+                                <i className="fa-solid fa-money-bill-transfer"></i>
                             </div>
                             Transfer
                         </div>
                         <div className="account_operation_withdrawl">
                             <div className="account_operation_Img">
-                                <i className="fas fa-search-dollar"></i>
+                                <i className="fa-solid fa-sack-dollar"></i>
                             </div>
-                            Withdrawl
+                            Withdrawal
                         </div>
                         <div className="account_operation_deposit">
                             <div className="account_operation_Img">

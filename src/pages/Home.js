@@ -24,7 +24,6 @@ const Home = () => {
         await Axios.post("http://localhost:3003/get_info",{
         searchingID: loginID})
         .then((response) => {
-            console.log(response.data[0])
             if (response.data){
                 setUserFirstName(response.data[0].firstname);
                 setUserLastName(response.data[0].lastname);
@@ -45,22 +44,22 @@ const Home = () => {
                         <br/>
                     </div>
                     <div className="headertitle">
-                        PiggyBank<br/>
+                        PIGGYBANK
                         <div className="headertxt">
-                            <div className="headertxt1">
-                                <i className="fas fa-coins"></i>Transaction and Withdrawl<br/>
+                            <div className="headerline1">
+                                <i className="fas fa-coins"></i>Transaction and Withdrawal
                             </div>
-                            <div className="headertxt2">
-                                <i className="fas fa-calculator"></i>Credit Scoring and Risk Calculation<br/>
+                            <div className="headerline2">
+                                <i className="fas fa-calculator"></i>Credit Scoring and Risk Calculation
                             </div>
-                            <div className="headertxt3">
-                                <i className="fas fa-user"></i>Easy Account Management<br/>
+                            <div className="headerline3">
+                                <i className="fas fa-user"></i>Easy Account Management
                             </div>
-                            <div className="headertxt4">
-                                <i className="fas fa-comment-dollar"></i>Loan and Insurance<br/>
+                            <div className="headerline4">
+                                <i className="fas fa-comment-dollar"></i>Loan and Insurance
                             </div>
-                            <div className="headertxt5">
-                                <i className="fas fa-mobile-alt"></i> Mobile Friendly<br/>
+                            <div className="headerline5">
+                                <i className="fas fa-mobile-alt"></i> Mobile Friendly
                             </div>
                         </div>
                         {loginStatus ? (
@@ -124,7 +123,7 @@ const Home = () => {
             </div>
             <div className="homeContainer1">
                 <div className="homeDisplayBlock1">
-                    <div className="homeDisplayImg"><i className="fas fa-coins"></i></div>
+                    <div className="homeDisplayImg"><i className="fa-solid fa-money-bill-transfer"></i></div>
                     <div className="homeDisplayTxt">
                         <div className="homeDisplayHeader">
                             Transaction
@@ -139,10 +138,10 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="homeDisplayBlock1">
-                    <div className="homeDisplayImg"><i className="fas fa-search-dollar"></i></div>
+                    <div className="homeDisplayImg"><i className="fa-solid fa-sack-dollar"></i></div>
                     <div className="homeDisplayTxt">
                         <div className="homeDisplayHeader">
-                            Withdrawl
+                            Withdrawal
                         </div>
                         Easy steps to take out your money from PiggyBank.
                         <div className="homeDisplayQuote">

@@ -107,6 +107,17 @@ app.post("/disable_2FA", (req, res) => {
     db_user.query("UPDATE user SET `2FA` = 0 WHERE user_id = ?;", user_id_disable2FA)
 })
 
+//check balance
+app.post("/check_balance", (req, res) => {
+    const user_id_checkbalance = req.body.payerID
+    const checked_balance = req.body.check_amount
+    db_user.query("SELECT balance FROM user WHERE user_id = ? AND balance >= ?;",
+    [user_id_checkbalance, checked_balance], (err, result) => {
+        res.send(result)
+    })
+})
+
+
 app.listen(3003, ()=>{
     console.log("running server 3003")
 })

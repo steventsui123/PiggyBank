@@ -9,7 +9,6 @@
     color: rgb(255, 223, 79);
     margin-bottom: 2rem;
     border-bottom: 2px solid;
-    margin-left: 1rem;
 }
 
 .loginContainer{
@@ -22,6 +21,10 @@
     border-radius: 20px;
     border: 2px solid rgb(255, 223, 79);
     border-style: solid none none none;
+}
+
+.loginContainer img{
+    position: relative;
 }
 
 .namereg{
@@ -71,12 +74,6 @@
     cursor: pointer;
 }
 
-.loginbutton:hover{
-    transform: all 0.2s ease-out;
-    font-size: 22px;
-    transition: 350ms;
-}
-
 .passwordType:focus, .emailType:focus{
     border: 3px solid rgb(255, 223, 79);
 }
@@ -107,21 +104,29 @@
 
 @media screen and (max-width:504px) {
     .passwordType, .emailType, .firstnameType, .lastnameType, .repasswordType{
-        width: 160px;
+        width: 175px;
         font-size: 14px;
     }
     .go-register, .resetpassword{
         font-size: 13px;
     }
+    .loginContainer{
+        padding: 2rem 2rem 2rem 1rem;
+    }
+    .loginContainer img{
+        width:125px;
+    }
+    .regContainer img{
+        width:125px;
+    }
 }
-
 @media screen and (max-width:355px) {
     .passwordType, .emailType, .firstnameType, .lastnameType, .repasswordType{
-        width: 120px;
-        font-size: 13px;
+        width: 150px;
     }
     .go-register, .resetpassword{
-        font-size: 11px;
+        font-size: 12px;
     }
 }
+
 

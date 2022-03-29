@@ -22,15 +22,19 @@ import Insurance from './pages/FAQ/Insurance';
 import Loan from './pages/FAQ/Loan';
 import Transaction from './pages/FAQ/Transaction';
 import Estatement from './pages/FAQ/Estatement';
-import Security from './pages/FAQ/Security'
+import Security from './pages/FAQ/Security';
+
+import Transfer from './function/Transfer';
 
 import {LoginStatusContext} from "./context/LoginContext";
 import {LoginIDContext} from "./context/LoginContext";
+import {userPayeeContext} from "./context/UserContext"
 
 function App() {
 
   const [loginStatus, setLoginStatus] = useState(false);
   const [loginID, setLoginID] = useState(null);
+  const [userPayee, setUserPayee] = useState([])
 
   Axios.defaults.withCredentials = true;
 
@@ -50,27 +54,31 @@ function App() {
     <BrowserRouter>
     <LoginStatusContext.Provider value={{loginStatus, setLoginStatus}}>
       <LoginIDContext.Provider value={{loginID, setLoginID}}>
-        {loginStatus ? (<LoginNavbar />) : (<Navbar />) }
-        <Routes>
-          <Route path='/' element={<Home />} exact />
-          <Route path='/about' element={<About />}/>
-          <Route path='/service' element={<Service />}/>
-          <Route path='/feature' element={<Feature />}/>
-          <Route path='/login' element={<Login />}/>
-          <Route path='/register' element={<Register />}/>
-          <Route path='/profile' element={<Profile />}/>
-          <Route path='/resetpassword' element={<ResetPassword />}/>
-          <Route path='*' element={<NotFound />}/>
+        <userPayeeContext.Provider value={{userPayee, setUserPayee}}>
+          {loginStatus ? (<LoginNavbar />) : (<Navbar />) }
+          <Routes>
+            <Route path='/' element={<Home />} exact />
+            <Route path='/about' element={<About />}/>
+            <Route path='/service' element={<Service />}/>
+            <Route path='/feature' element={<Feature />}/>
+            <Route path='/login' element={<Login />}/>
+            <Route path='/register' element={<Register />}/>
+            <Route path='/profile' element={<Profile />}/>
+            <Route path='/resetpassword' element={<ResetPassword />}/>
+            <Route path='*' element={<NotFound />}/>
 
-          <Route path='/support=account' element={<Account />}/>
-          <Route path='/support=development' element={<Development />}/>
-          <Route path='/support=general' element={<General />}/>
-          <Route path='/support=insurance' element={<Insurance />}/>
-          <Route path='/support=loan' element={<Loan />}/>
-          <Route path='/support=transaction' element={<Transaction />}/>
-          <Route path='/support=estatement' element={<Estatement />}/>
-          <Route path='/support=security' element={<Security />}/>
-        </Routes>
+            <Route path='/support=account' element={<Account />}/>
+            <Route path='/support=development' element={<Development />}/>
+            <Route path='/support=general' element={<General />}/>
+            <Route path='/support=insurance' element={<Insurance />}/>
+            <Route path='/support=loan' element={<Loan />}/>
+            <Route path='/support=transaction' element={<Transaction />}/>
+            <Route path='/support=estatement' element={<Estatement />}/>
+            <Route path='/support=security' element={<Security />}/>
+
+            <Route path='/transfer' element={<Transfer />}/>
+          </Routes>
+          </userPayeeContext.Provider>
         </LoginIDContext.Provider>
       </LoginStatusContext.Provider>
     </BrowserRouter>

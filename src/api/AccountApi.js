@@ -212,7 +212,14 @@ app.get('/logout', function(req, res) {
     })
 
  })
- 
+
+ //delete account
+ app.post("/delete_account", (req, res) =>{
+     const user_id_delteaccount = req.body.user_id_deleteaccount
+
+     db_user.query("DELETE FROM user WHERE user_id = ?;",user_id_delteaccount)
+ })
+
 
 
 app.listen(3001, ()=>{

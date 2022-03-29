@@ -15,7 +15,6 @@ html,body{
 .pig img{
     max-width: 700px;
     max-height: 569px;
-
     border-radius: 25% 0px 0px 25%;
     border:rgb(0, 0, 0) solid 2px;
     margin-top: 3.6rem;
@@ -29,6 +28,7 @@ html,body{
     border-left: 2px solid rgb(255, 216, 40);
     background-color: rgb(29, 29, 29);
     padding: 1rem 0rem;
+    font-weight: bolder;
 }
 
 .headertxt{
@@ -41,30 +41,30 @@ html,body{
     width: 35em;
     color: rgb(255, 223, 79);
     font-family: 'Hind', sans-serif;
+    font-weight: normal;
 }
 
-.headertxt1{
+.headerline1{
     animation: fadeIn ease-in 0.2s;
 }
-.headertxt2{
+.headerline2{
     animation: fadeIn ease-in 0.4s;
 }
-.headertxt3{
+.headerline3{
     animation: fadeIn ease-in 0.6s;
 }
-.headertxt4{
+.headerline4{
     animation: fadeIn ease-in 0.8s;
 }
-.headertxt5{
+.headerline5{
     animation: fadeIn ease-in 1s;
 }
 .startbutton, .homeWelcome{
-    animation: fadeIn ease-in 1.5s;
+    animation: fadeIn ease-in 1.2s;
 }
 
-
 .headertxt i{
-    margin: 1.2rem
+    margin: 1.2rem;
 }
 
 .startbutton{
@@ -103,13 +103,13 @@ html,body{
 }
 
 .homeLeftGrid, .homeRightGrid, .homeLeftGridTxt, .homeRightGridTxt{
-    animation: fadeIn ease-in 2s;
+    animation: fadeIn ease-in 1.5s;
 }
 
 .homeLeftGrid img{
+    float: right;
     max-width: 700px;
     max-height: 430px;
-    float: right;
 }
 
 .homeRightGrid img{
