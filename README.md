@@ -18,6 +18,7 @@ Running BackEnd (NodeJs)
 node src/api/AccountApi
 node src/api/EmailApi
 node src/api/ProfileApi
+node src/api/FunctionApi
 ```
 
 Open [http://localhost:3000](http://localhost:3000) and you will see the page appear.
