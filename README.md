@@ -1,54 +1,62 @@
 # PiggyBank
 
-### PiggyBank is a fully responsive web application, which operates and provides various bank functions by REST API and Database CRUD Operations.
+PiggyBank is a fully responsive web application, which operates and provides various bank functions by REST API and CRUD Operations.
 
-> Notice: This project is still on development status (5/3/2022)
+> Notice: This project is still on development status (17/3/2022). The website will be hosted after completion.
 
-### `Technologies: ReactJS, CSS, NodeJS, ExpressJS, MySQL, Axios, Bcrypt`
+__Technologies: ReactJS, CSS, NodeJS, ExpressJS, MySQL, Axios, Bcrypt__
 
----
+## Getting Started
 
-### Before running this project in local, you should:
-#### - Establish a MySQL database at port 3306
-#### - Install node.js
-#### - Create your own environment variable (SECRETs)
-#### - All environment variable: 
-`DBPASSWORD, DBUSER, SESSIONSECRET, JWTTOKEN, SALT, SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD`
-
----
-
-### In the project directory, you can run:
-### FrontEnd (React App)
-```
+Running FrontEnd (ReactJS)
+```node
 npm start
 ```
 
-### BackEnd (NodeJs)
-```
+Running BackEnd (NodeJs)
+```node
 node src/api/AccountApi
 node src/api/EmailApi
 node src/api/ProfileApi
 ```
 
----
+Open [http://localhost:3000](http://localhost:3000) and you will see the page appear.
 
-### Runs the app in the broswer:
-Open [http://localhost:3000](http://localhost:3000)
+## Highlights
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Design and Architecture
+* Fully Responsive
+* RESTful API
+* CRUD Operation
+#### Functions
+* Account Register / Login
+* Transfer
+* Withdrawal
+* Deposit
+* Loan
+* Insurance
+* E-Statement
+#### Features
+* Password Hashing
+* Forgot Password
+* Two-Factor Authentication (Email)
+* Payee Registration
+* Password Changing
+* Account Termination
+* Transaction History
+* Credit Scoring
+* Interest / Loan Calculator
+* FAQ Page
 
----
 
-### Preview:
+## Preview
 
 ![HOME PREVIEW](Preview/preview1.png)
 
 ![PROFILE PREVIEW](Preview/preview2.png)
 
----
 
-### Learn More:
+## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
